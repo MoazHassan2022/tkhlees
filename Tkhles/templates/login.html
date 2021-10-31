@@ -1,0 +1,140 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>تسجيل الدخول</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    
+         
+  </head>
+  <style type="text/css">
+  
+  .form-g{
+  width: 90%;
+  height: 70%;
+  background: #fff;
+  padding: 9% 8%;
+  margin-left: 5%;
+  margin-top:9%;
+  border-radius:5px;
+  text-align: right;
+  }
+
+  .log-in-button{
+  width: 48%;
+  height: 10%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #078e91;
+  background-color: #ecd704;
+    }
+  .taille{
+  font-size: 13px;
+  text-align: right;
+  }
+
+  .form-input {
+  width: 50%;
+  border: 1px solid #DCDCDC;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  padding: 17px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222; 
+  text-align: right;
+  }
+
+  .hr{
+  border:solid 2px #6495ED;
+  }
+
+  .form-titre{
+  text-align: center;
+  margin-top: -20px;
+  }
+
+  button{
+  width:30%;
+  height:15%;
+  background: linear-gradient(to left top, #b33771,#e3dc96);
+  border-style: none;
+  color:#fff;
+  font-size: 15px;
+  font-family: 'Lato';
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all .5s;
+  box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+
+  </style>
+
+  <body style="background: #078e91;">
+    
+            
+                <div class="form-g">
+                    <form action="{% url 'login' %}" method="post" id="add_name">
+                        {% csrf_token %}
+                
+                
+                        <h3 class="form-titre"><strong>تسجيل الدخول</strong></h3>
+                        <hr class="hr">
+
+                        {% if message %}
+                            <div>{{ message }}</div>
+                        {% endif %}
+                        
+                       
+                        <div class="form-group">
+                           <strong class="taille">اسم المستخدم</strong><br>
+                           <input type="text" class="form-input"style="height: 2%;width: 95%" name="username" id="code">
+                        </div>  
+                       
+                        <div class="form-group">
+                            <strong class="taille">ادخل البريد الالكنروني / رقم الهاتف</strong><br>
+                            <input type="email" class="form-input" style="height: 2%;width:95%" name="email" id="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <strong class="taille">ادخل كلمة السر</strong><br>
+                            <input type="password" class="form-input"style="height: 2%;width: 95%" name="password" id="password">
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <button type="submit">تسجيل</button>
+                            
+                        </div>
+                        
+                        
+                    </form>
+                    ليس لديك حساب؟ سجل من هنا <a href="/register">تسجيل حساب</a>
+                  
+               
+
+      
+      <div id="result"></div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+
